@@ -71,7 +71,7 @@ Canvas is also used for rank and activity leaderboard cards.
 | `+warns @member` | View recent warnings. |
 | `+removewarn <warning-id>` | Remove a warning. |
 | `+resetwarns @member` | Clear a member’s warnings; Administrator required. |
-| `+timeout @member <10m|2h|1d> [reason]` / `+prison` | Timeout a member. |
+| `+timeout @member <10m|2h|1d> [reason]` | `+prison` | Timeout a member. |
 | `+kick @member [reason]`, `+ban @member [reason]` | Remove a member. |
 | `+clear <1-100>` | Bulk-delete recent messages. |
 | `+lock`, `+unlock`, `+hide`, `+show` | Change channel access. |
