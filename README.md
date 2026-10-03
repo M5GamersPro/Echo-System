@@ -1,7 +1,7 @@
 # Echo System
 
 <div align="center">
-
+https://mayor-cloud.com/i/e92x/ChatGPT_Image_3_2026_01_36_58_.png
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js" alt="Node.js 20+" />
   <img src="https://img.shields.io/badge/Discord.js-14-5865F2?style=for-the-badge&logo=discord" alt="Discord.js" />
