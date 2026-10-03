@@ -1,22 +1,95 @@
 # Echo System
 
-Echo System is a prefix-based Discord server bot built with Discord.js, TypeScript, MongoDB, and Canvas. It includes moderation, tickets, giveaways, EchoSR wallets, leveling, Egypt-time activity boards, temporary voice rooms, and server-specific configuration.
+<div align="center">
+
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js" alt="Node.js 20+" />
+  <img src="https://img.shields.io/badge/Discord.js-14-5865F2?style=for-the-badge&logo=discord" alt="Discord.js" />
+  <img src="https://img.shields.io/badge/MongoDB-Atlas_or_Local-4EA94B?style=for-the-badge&logo=mongodb" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License" />
+
+  <h3>A complete Discord bot for moderation, security, automation, and community management.</h3>
+
+</div>
+
+Echo System is a feature-rich Discord bot built to help communities run smoothly and securely. It combines moderation tools, anti-nuke protection, welcome systems, ticketing, giveaways, level tracking, and custom emoji support into one polished package.
+
+## Why Echo System?
+
+Whether you're running a small gaming community or a large Discord server, Echo System gives you the tools to:
+
+- Keep your server safe with automated moderation and anti-raid / anti-nuke protections
+- Manage support tickets and community communication efficiently
+- Reward activity with leveling, rankings, and leaderboards
+- Handle giveaways, server automation, and welcome flows
+- Customize the experience with prefixes, aliases, and Discord-ready assets
+
+## Features
+
+### Security & Moderation
+
+- Warning and strike tracking
+- Timeout, kick, and ban commands
+- Bulk message cleanup
+- Channel locking, hiding, and visibility controls
+- Role and user whitelisting
+- Anti-raid and anti-nuke protection
+- Audit-friendly log configuration
+
+### Community Management
+
+- Ticket system with category and support role configuration
+- Welcome channel and welcome message customization
+- Giveaway creation and early end support
+- Prefix customization per server
+- Alias and shortcut support for commands
+- Temporary voice channel setup
+
+### Economy & Growth
+
+- EchoSR wallet system
+- Daily reward claims
+- Wallet transfers and rate display
+- Leveling and XP tracking
+- Leaderboards for text and voice activity
+- Rank cards and activity summaries
+
+### Utility & Customization
+
+- Canvas-based profile and server cards
+- Role and server information commands
+- Avatar and user lookup tools
+- Custom emoji generation support
+- Flexible `.env` configuration
 
 ## Requirements
 
-- Node.js 20 or newer and npm
-- A MongoDB server or MongoDB Atlas database
-- A Discord application and bot token
+Before you run the bot, make sure you have:
 
-## Install and configure
+- Node.js 20 or newer
+- npm
+- MongoDB database (local or MongoDB Atlas)
+- A Discord bot token
+- A Discord application with the correct bot permissions
 
-From the `echoss` folder, install dependencies:
+## Quick Start
 
-```powershell
+1. Clone the repository
+
+```bash
+git clone https://github.com/M5GamersPro/Echo-System.git
+cd Echo-System
+```
+
+2. Install dependencies
+
+```bash
 npm install
 ```
 
-Create a private `.env` file in the project root with your own values:
+3. Create your environment file
+
+Create a `.env` file in the project root and add your values:
 
 ```env
 DISCORD_TOKEN=your_bot_token
@@ -26,135 +99,177 @@ BOT_OWNER_IDS=your_discord_user_id
 DEFAULT_PREFIX=+
 ```
 
-For Atlas, put your Atlas connection string in `MONGODB_URI`. The database user needs the built-in `readWrite` role on the database named by `MONGODB_DATABASE`. Never commit or share `.env`.
+> Never commit or share your `.env` file. Keep it private.
 
-In the Discord Developer Portal, enable **Message Content Intent** and **Server Members Intent**. Invite the bot with the permissions needed for the features you enable: View Channels, Send Messages, Embed Links, Read Message History, Manage Messages, Manage Channels, Move Members, Manage Roles, Moderate Members, Kick Members, Ban Members, and View Audit Log.
+4. Build and run the bot
 
-Build and start the bot:
-
-```powershell
+```bash
 npm run build
 npm start
 ```
 
-For development, run `npm run dev`. Run the tests with `npm test`. Generate the Echo emoji PNG pack with `npm run emojis:build`.
+For development mode:
 
-The bot attempts to create database indexes at startup. If the database user cannot create indexes, it continues with a warning; read/write access is still required, and missing indexes can reduce performance or uniqueness protection. This bot uses prefix commands and does not require slash-command registration.
-
-## Prefix and help
-
-The fallback prefix is `$`. Set `DEFAULT_PREFIX` in `.env` for newly configured servers, or change one server with `+setprefix !` (replace `+` with that server’s current prefix). `+help` opens the interactive command categories. The bot uses the prefix saved for each server.
-
-In examples below, replace `+` with your server’s current prefix. A command that takes `#channel` accepts a channel mention; commands that take `@member` accept a user mention.
-
-## Command guide
-
-### General and Canvas
-
-| Command | Purpose |
-| --- | --- |
-| `+id [@member]` / `+whois` | Render a Canvas user ID card. |
-| `+serverid` / `+guildid` | Render a Canvas server ID card. |
-| `+avatar [@member]` | Show an avatar. |
-| `+server` | Show server details. |
-| `+roles` | List server roles. |
-| `+calc <expression>` | Calculate basic arithmetic. |
-| `+snipe` | Show the latest deleted text message in this channel. |
-
-Canvas is also used for rank and activity leaderboard cards.
-
-### Moderation and administration
-
-| Command | Purpose |
-| --- | --- |
-| `+warn @member <reason>` | Add a warning. |
-| `+warns @member` | View recent warnings. |
-| `+removewarn <warning-id>` | Remove a warning. |
-| `+resetwarns @member` | Clear a member’s warnings; Administrator required. |
-| `+timeout @member <10m|2h|1d> [reason]` | `+prison` | Timeout a member. |
-| `+kick @member [reason]`, `+ban @member [reason]` | Remove a member. |
-| `+clear <1-100>` | Bulk-delete recent messages. |
-| `+lock`, `+unlock`, `+hide`, `+show` | Change channel access. |
-| `+say <message>` | Send a message without triggering mentions. |
-| `+setprefix <prefix>` | Change this server’s prefix; Manage Server required. |
-| `+setlogs #channel`, `+logs`, `+setlogs off` | Configure or inspect the event-log channel. |
-
-### Tickets, greetings, and giveaways
-
-| Command | Purpose |
-| --- | --- |
-| `+ticketpanel`, `+ticketteam` | Post the standard or Arabic ticket panel. |
-| `+ticketrole @role` | Set the support role. |
-| `+ticketcategory <category>` | Set the parent category for new tickets. |
-| `+greet #channel` | Set the welcome channel. |
-| `+greetmsg <message>` | Set the welcome text; supports `{user}`, `{server}`, and `{memberCount}`. |
-| `+greetdel <0-60>`, `+greetshow` | Configure or view greeting settings. |
-| `+giveaway <duration> <winners> <prize>` | Start a button-entry giveaway, e.g. `+giveaway 1h 2 Nitro`. |
-| `+endgiveaway <id>` / `+gend` | End a giveaway early. |
-
-### EchoSR and leveling
-
-EchoSR is an internal wallet currency. `+convert` displays the reference rate **1 EchoSR = 40,000 ProBot credits**; it does not send or verify real ProBot credits.
-
-| Command | Purpose |
-| --- | --- |
-| `+balance [@member]` / `+bal` | View an EchoSR wallet. |
-| `+daily` | Claim 1 EchoSR once every 24 hours. |
-| `+pay @member <amount>` | Transfer EchoSR to another member. |
-| `+convert [amount]` / `+rate` | Display the reference conversion. |
-| `+add echosr @member <amount>` | Add EchoSR; Manage Server required. |
-| `+rank [@member]` / `+level` | Render a Canvas rank card. |
-| `+topxp` / `+levels` | Show the XP leaderboard. |
-| `+setlevelchannel #channel`, `+setlevelchannel off` | Route level-up notifications to a chosen channel or back to the source channel. |
-
-XP is awarded for eligible messages with a one-minute per-user cooldown.
-
-### Activity leaderboards
-
-Daily and weekly windows use `Africa/Cairo`: daily stats begin at Cairo midnight; weekly stats begin Monday at Cairo midnight. Voice activity accumulates only while the bot is online. Combined scores equal text-message count plus voice minutes.
-
-| Command | Shortcut | Ranking |
-| --- | --- | --- |
-| `+topday` | `+tday` | Combined activity today |
-| `+topweek` | `+tweek` | Combined activity this week |
-| `+topdaytext` | `+tday text` | Today’s text messages |
-| `+topdayvoice` | `+tday voice` | Today’s voice minutes |
-| `+topweektext` | `+tweek text` | This week’s text messages |
-| `+topweekvoice` | `+tweek voice` | This week’s voice minutes |
-
-### Temporary voice
-
-Use `+tempvoice setup #join-to-create [category]` to configure the trigger, `+tempvoice status` to inspect it, and `+tempvoice off` to disable it. Members joining the trigger are moved into a room named for them; the room is deleted when empty. The bot needs **Manage Channels** and **Move Members**.
-
-### Owners and shortcuts
-
-Seed initial owners with comma-separated Discord user IDs in `BOT_OWNER_IDS`. Owners can add another owner using `+addowner @user`. Owner shortcuts are server-specific:
-
-```text
-+alias tdaytext topdaytext
-+aliases
-+unalias tdaytext
+```bash
+npm run dev
 ```
 
-Shortcuts can target registered commands and cannot replace built-in names.
+## Recommended Discord Settings
 
-### Security
+In the Discord Developer Portal, enable:
 
-Whitelist a user or role with `+whitelist add @user-or-role`; inspect with `+whitelist list`; remove with `+whitelist remove @user-or-role`.
+- Message Content Intent
+- Server Members Intent
 
-Anti-raid and anti-nuke are disabled by default. Example configuration:
+When inviting the bot, give it the permissions needed for the features you enable, such as:
+
+- View Channels
+- Send Messages
+- Manage Messages
+- Kick Members
+- Ban Members
+- Manage Roles
+- View Audit Log
+- Read Message History
+
+## Project Structure
+
+```text
+Echo-System/
+├── assets/
+│   └── emojis/
+├── scripts/
+├── src/
+├── test/
+├── .env.example
+├── .gitignore
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+├── tsconfig.json
+└── dist/
+```
+
+## Main Configuration
+
+The bot is configured through environment variables and server-level settings. The default prefix can be changed with `DEFAULT_PREFIX`, and server admins can change the prefix later with commands like:
+
+```text
++setprefix !
+```
+
+You can also seed initial bot owners with a comma-separated list in `BOT_OWNER_IDS`.
+
+## Command Highlights
+
+Here are some of the most useful commands included in the system:
+
+### General & Utility
+
+```text
++help
++id @member
++serverid
++avatar @member
++server
++roles
++calc 2+2
++snipe
+```
+
+### Moderation
+
+```text
++warn @member spam
++warns @member
++removewarn 12
++timeout @member 10m spam
++kick @member reason
++ban @member reason
++clear 50
++lock
++unlock
++hide
++show
++setlogs #channel
++logs
++whitelist add @user
++whitelist list
++whitelist remove @user
+```
+
+### Tickets & Community
+
+```text
++ticketpanel
++ticketteam
++ticketrole @role
++ticketcategory category-name
++greet #channel
++greetmsg Welcome {user} to {server}!
++giveaway 1h 2 Nitro
++endgiveaway 123
+```
+
+### Leveling & Economy
+
+```text
++balance
++daily
++pay @member 100
++rank
++topxp
++setlevelchannel #channel
+```
+
+### Security Features
 
 ```text
 +antiraid on 8 10 alert
 +antinuke on 3 20 alert
++whitelist add @role
 ```
 
-Anti-raid can use `timeout` instead of `alert`; anti-nuke can use `strip` to remove selected privileged roles after its threshold. Anti-nuke requires **View Audit Log**; `strip` also requires **Manage Roles**. These protections monitor configured event thresholds and cannot restore deleted channels or roles.
+## Custom Emojis
 
-## Echo custom emojis
+Echo System includes support for a custom emoji pack. To generate the emoji assets:
 
-Run `npm run emojis:build`, then upload the generated PNGs from `assets/emojis` to each server. Keep names such as `echo_core`, `echo_coin`, and `echo_tickets`; the bot finds uploaded emojis by name. Without them, the bot uses text labels.
+```bash
+npm run emojis:build
+```
 
-## Scope notes
+Then upload the generated PNGs from `assets/emojis` to your Discord server, keeping the expected names like:
 
-Premium is a placeholder until a payment provider is configured. ProBot credits are not transferred by this bot; `+convert` only displays a reference value. Nadeko feature parity is not complete; the implemented modules are listed above.
+- `echo_core`
+- `echo_coin`
+- `echo_tickets`
+
+## Notes
+
+- `+convert` shows a reference rate for EchoSR and ProBot credits; it does not move or verify real ProBot credits.
+- Premium features are placeholders pending payment-provider integration.
+- Anti-raid and anti-nuke systems are disabled by default until configured.
+- The bot attempts to create database indexes automatically at startup.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome. If you want to improve the bot, fix bugs, or add new features:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests/build checks
+5. Open a pull request
+
+## Support
+
+For issues, feature requests, or questions, use the GitHub repository issues tab or contact the maintainer on the project page.
+
+---
+
+Built with TypeScript, Discord.js, MongoDB, and Canvas for modern Discord server automation.
