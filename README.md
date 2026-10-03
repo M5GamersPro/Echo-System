@@ -1,4 +1,4 @@
-# Echo System
+# Enzo System
 
 <div align="center">
 
@@ -12,9 +12,9 @@
 
 </div>
 
-Echo System is a feature-rich Discord bot built to help communities run smoothly and securely. It combines moderation tools, anti-nuke protection, welcome systems, ticketing, giveaways, level tracking, and custom emoji support into one polished package.
+Enzo System is a feature-rich Discord bot built to help communities run smoothly and securely. It combines moderation tools, anti-nuke protection, welcome systems, ticketing, giveaways, level tracking, and custom emoji support into one polished package.
 
-## Why Echo System?
+## Why Enzo System?
 
 Whether you're running a small gaming community or a large Discord server, Echo System gives you the tools to:
 
@@ -77,8 +77,8 @@ Before you run the bot, make sure you have:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/M5GamersPro/Echo-System.git
-cd Echo-System
+git clone https://github.com/M5GamersPro/Enzo-System-By-M5
+cd Enzo-System-By-M5
 ```
 
 2. Install dependencies
@@ -94,7 +94,7 @@ Create a `.env` file in the project root and add your values:
 ```env
 DISCORD_TOKEN=your_bot_token
 MONGODB_URI=mongodb://127.0.0.1:27017
-MONGODB_DATABASE=echo_system
+MONGODB_DATABASE=enzo_system
 BOT_OWNER_IDS=your_discord_user_id
 DEFAULT_PREFIX=+
 ```
@@ -135,7 +135,7 @@ When inviting the bot, give it the permissions needed for the features you enabl
 ## Project Structure
 
 ```text
-Echo-System/
+Enzo-System-By-M5/
 ├── assets/
 │   └── emojis/
 ├── scripts/
@@ -233,7 +233,7 @@ Here are some of the most useful commands included in the system:
 
 ## Custom Emojis
 
-Echo System includes support for a custom emoji pack. To generate the emoji assets:
+Enzo System includes support for a custom emoji pack. To generate the emoji assets:
 
 ```bash
 npm run emojis:build
@@ -254,17 +254,8 @@ Then upload the generated PNGs from `assets/emojis` to your Discord server, keep
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
-## Contributing
-
-Contributions are welcome. If you want to improve the bot, fix bugs, or add new features:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests/build checks
-5. Open a pull request
 
 ## Support
 
