@@ -26,7 +26,7 @@ export function helpEmbed(prefix: string, category?: HelpCategory, guild?: Guild
   if (!category) {
     embed.setTitle(`${echoEmoji(guild, 'core')} Echo System • Help`)
       .setDescription(`Hello! I’m **Echo System**, a server bot for moderation, welcome messages, giveaways, and support tickets.\n\nCurrent prefix: \`${prefix}\`\nSelect a category below to explore my commands.`)
-      .setThumbnail('https://cdn.discordapp.com/attachments/1543202071598342194/1555479394653573180/standard.gif?backend=b2&ex=6ac0ac93&is=6abf5b13&hm=1499188674af6fa1bc9db18b4a586662c2c29cc9052ca6d57374c2e09bb2e212&')
+      .setThumbnail('https://mayor-cloud.com/i/7wsl/6ac0d2225ad1742d9c1bde1b.gif')
       .setFooter({ text: 'Requested by you' });
     return embed;
   }
