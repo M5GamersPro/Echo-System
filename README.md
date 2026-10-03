@@ -1,4 +1,4 @@
-# Enzo System
+# Echo System
 
 <div align="center">
 
@@ -12,9 +12,9 @@
 
 </div>
 
-Enzo System is a feature-rich Discord bot built to help communities run smoothly and securely. It combines moderation tools, anti-nuke protection, welcome systems, ticketing, giveaways, level tracking, and custom emoji support into one polished package.
+Echo System is a feature-rich Discord bot built to help communities run smoothly and securely. It combines moderation tools, anti-nuke protection, welcome systems, ticketing, giveaways, level tracking, and custom emoji support into one polished package.
 
-## Why Enzo System?
+## Why Echo System?
 
 Whether you're running a small gaming community or a large Discord server, Echo System gives you the tools to:
 
@@ -77,8 +77,8 @@ Before you run the bot, make sure you have:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/M5GamersPro/Enzo-System-By-M5
-cd Enzo-System-By-M5
+git clone https://github.com/M5GamersPro/Echo-System
+cd Echo-System
 ```
 
 2. Install dependencies
@@ -94,7 +94,7 @@ Create a `.env` file in the project root and add your values:
 ```env
 DISCORD_TOKEN=your_bot_token
 MONGODB_URI=mongodb://127.0.0.1:27017
-MONGODB_DATABASE=enzo_system
+MONGODB_DATABASE=echo_system
 BOT_OWNER_IDS=your_discord_user_id
 DEFAULT_PREFIX=+
 ```
@@ -233,7 +233,7 @@ Here are some of the most useful commands included in the system:
 
 ## Custom Emojis
 
-Enzo System includes support for a custom emoji pack. To generate the emoji assets:
+Echo System includes support for a custom emoji pack. To generate the emoji assets:
 
 ```bash
 npm run emojis:build
@@ -264,3 +264,6 @@ For issues, feature requests, or questions, use the GitHub repository issues tab
 ---
 
 Built with TypeScript, Discord.js, MongoDB, and Canvas for modern Discord server automation.
+
+M5
+EnzoCord
