@@ -1,6 +1,7 @@
 # Echo System
 
 <div align="center">
+  <img width="1408" height="768" alt="watermark-removed-image_bd5a9662" src="https://github.com/user-attachments/assets/c209009c-d8fc-4e68-9e0b-12347abeea24" />
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js" alt="Node.js 20+" />
   <img src="https://img.shields.io/badge/Discord.js-14-5865F2?style=for-the-badge&logo=discord" alt="Discord.js" />
