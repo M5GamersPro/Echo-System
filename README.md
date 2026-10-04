@@ -67,6 +67,11 @@ Echo System is a self-hosted, prefix-command Discord bot built with TypeScript, 
 
 For development with automatic restarts, use `npm run dev`. This bot uses prefix commands; slash-command registration is not required.
 
+The Bot is also hostable on any host by using this startup command
+```bash
+npm install && npm run build && npm start
+```
+
 ## Configuration
 
 The bot loads environment variables from `.env` at startup.
