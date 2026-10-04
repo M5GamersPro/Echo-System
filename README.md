@@ -247,4 +247,5 @@ Run `npm run emojis:build` to generate the Echo emoji PNG pack in `assets/emojis
 
 Premium is a placeholder until a payment provider is configured. ProBot credits are not transferred by this bot; `+convert` only displays a reference value. The Nadeko help entry is a directory of Echo System's implemented commands; it does not indicate full Nadeko feature parity or use Nadeko's original code.
 
+M5
 EnzoCord
