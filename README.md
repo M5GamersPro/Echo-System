@@ -101,7 +101,13 @@ DEFAULT_PREFIX=+
 
 > Never commit or share your `.env` file. Keep it private.
 
-4. Build and run the bot
+4. Install Emojis 
+   For Emojis Installation 
+   run
+   ```bash
+   npm run emojis:build
+   ```
+5. Build and run the bot
 
 ```bash
 npm run build
@@ -135,7 +141,7 @@ When inviting the bot, give it the permissions needed for the features you enabl
 ## Project Structure
 
 ```text
-Enzo-System-By-M5/
+Echo-System/
 ├── assets/
 │   └── emojis/
 ├── scripts/
